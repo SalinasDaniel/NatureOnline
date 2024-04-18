@@ -1,0 +1,19 @@
+.testimonials{
+    .row{
+        h5{
+            margin-bottom: 0 !important;
+        }
+        p{
+            i{
+                font-size: 23px;
+            }
+        }
+        .list-unstyled{
+            gap: 1px;
+            i{
+                color: #e4a11b;
+                font-size: 17px;
+            }
+        }
+    }
+}

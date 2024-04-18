@@ -1,0 +1,21 @@
+//abstracts
+@import "./abstracts/mixins.scss";
+
+//base
+@import "./base/base.scss";
+@import "./base/typography.scss";
+
+//layouts
+@import "./layout/header.scss";
+@import "./layout/footer.scss";
+
+//pages
+@import "./pages/home.scss";
+
+//Componenets
+@import "./components/slider.scss";
+@import "./components/cards-recommendation.scss";
+@import "./components/product-cards.scss";
+@import "./components/cards-infos.scss";
+@import "./components/testimonials.scss";
+@import "./components/quick-view.scss";

@@ -1,0 +1,28 @@
+body, *{
+    font-family: 'Barlow-Regular-Medium', sans-serif !important;
+    color: #415161;
+    .container-fluid{
+        @include breakpoint(desktop){
+            padding: 0;
+        }
+    }
+    .title-section{
+        h2{
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 40px;
+            @include breakpoint(phone){
+                font-size: 33px;
+            }
+        }
+    }
+    .spacers{
+        padding: 120px 0px;
+        @include breakpoint(phone){
+            padding: 60px 0px;
+        }
+    }
+    .spacer-bottom{
+        padding-bottom: 80px;
+    }
+}

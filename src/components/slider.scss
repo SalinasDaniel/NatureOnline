@@ -1,0 +1,60 @@
+.container-slider{
+    .carousel{
+        .row{
+            .text-slider{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                @include breakpoint(phone){
+                    padding: 30px 20px 0px 20px;
+                }
+                h1{
+                    font-size: 56px;
+                    text-transform: uppercase;
+                    @include breakpoint(phone){
+                        font-size: 37px;
+                    }
+                }
+                p{
+                    font-size: 17px;
+                }
+                .btn{
+                    width: 171px;
+                    border-radius: 0;
+                    background-color: transparent;
+                    border-color: #415161;
+                    color: #415161;
+                    box-shadow: inset 0 0 0 0 #51ce54;
+                    transition: ease-out 0.4s;
+                    &:hover{
+                        box-shadow: inset 400px 0 0 0 #51ce54;
+                        color: #ffffff;
+                        border-color: #51ce54;
+                        i{
+                            color: #ffffff;
+                        }
+                    }
+                    i{
+                        &:before{
+                            font-size: 14px;
+                            font-weight: bold !important;
+                        }
+                    }
+                }
+            }
+            .image-slider{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                img{
+                    width: 500px;
+                    height: auto;
+                    @include breakpoint(phone){
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

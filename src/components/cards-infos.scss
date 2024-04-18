@@ -1,0 +1,46 @@
+.cards-infos{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    @include breakpoint(phone){
+        gap: 25px;
+    }
+    @include breakpoint(tablet){
+        gap: 20px;
+    }
+    .card-info{
+        text-align: center;
+        border-radius: 10px;
+        border: 1px solid #d3d3d3;
+        padding: 20px;
+        flex: 0 0 auto;
+        max-width: 100%;
+        @include breakpoint(desktop){ 
+            max-width: 25%;
+        }
+        @include breakpoint(tablet){
+            max-width: 30%;
+        }
+        img{
+            height: 110px;
+            width: auto;
+        }
+        .card-body{
+            @include breakpoint(desktop){ 
+                padding: 0 22px;
+            }
+            h5{
+                text-transform: uppercase;
+            }
+            button{
+                width: 80%;
+                i{
+                    color: #ffffff;
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+}

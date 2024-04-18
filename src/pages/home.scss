@@ -1,0 +1,28 @@
+.container{
+    .bg-image-section{
+        .text-button-section{
+            background-color: #f4f4f4;
+            padding: 100px;
+            background-image: url("../assets/img/tea.webp");
+            background-repeat: no-repeat;
+            background-position: right;
+            background-attachment: fixed;
+            background-size: 650px;
+            @include breakpoint(phone){
+                padding: 20px;
+                background-position: top;
+                background-size: contain;
+            }
+            h2{
+                font-size: 44px;
+                @include breakpoint(phone){
+                    font-size: 30px;
+                }
+            }
+            button{
+                width: 180px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
