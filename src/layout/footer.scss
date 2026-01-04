@@ -1,16 +1,19 @@
+//abstracts
+@use "../abstracts/mixins.scss";
+
 .container{
     .form-subscribe{
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 30px 0px;
-        @include breakpoint(phone){
+        @include mixins.breakpoint(phone){
             flex-direction: column;
         }
         .text-subscribe{
             h5{
                 font-size: 33px;
-                @include breakpoint(phone){
+                @include mixins.breakpoint(phone){
                     font-size: 20px;
                     margin-bottom: 4px;
                 }
@@ -21,11 +24,11 @@
         }
         .form-sub{
             width: 400px;
-            @include breakpoint(phone){
+            @include mixins.breakpoint(phone){
                 width: 90%;
                 margin-top: 12px;
             }
-            @include breakpoint(desktop){
+            @include mixins.breakpoint(desktop){
                 margin-right: 140px;
             }
         }
@@ -34,13 +37,13 @@
         margin: 0;
         justify-content: space-between;
         padding-top: 30px;
-        @include breakpoint(phone){
+        @include mixins.breakpoint(phone){
             text-align: center;
             padding-left: 20px;
             padding-right: 20px;
         }
         .column{
-            @include breakpoint(phone){
+            @include mixins.breakpoint(phone){
                 margin-bottom: 30px;
                 &:last-child{
                     margin-bottom: 0;
@@ -53,13 +56,13 @@
             }
             &:first-child{
                 padding-left: 0;
-                @include breakpoint(phone){
+                @include mixins.breakpoint(phone){
                     padding: 0;
                 }
             }
             h5{
                 font-weight: bold;
-                @include breakpoint(desktop){
+                @include mixins.breakpoint(desktop){
                     margin-bottom: 19px;
                 }
             }
@@ -70,7 +73,7 @@
                 text-align: center;
                 & + img{
                     width: 100%;
-                    @include breakpoint(phone){
+                    @include mixins.breakpoint(phone){
                         width: 70%;
                     }
                 }
@@ -88,7 +91,7 @@
             justify-content: center;
         }
         p{
-            @include breakpoint(phone){
+            @include mixins.breakpoint(phone){
                 margin-bottom: 10px;
             }
         }

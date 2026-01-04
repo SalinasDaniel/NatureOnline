@@ -9,7 +9,7 @@
                 <article class="card product">
                     <figure>
                         <a href="#">
-                            <img src="./assets/img/Mieltertos-noche-sachet-15g.webp" class="card-img-top" alt="Salud" width="258" height="258">
+                            <img src="assets/img/Mieltertos-noche-sachet-15g.webp" class="card-img-top" alt="Salud" width="258" height="258">
                             <figcaption>Mieltertos Noche sachet 15 g</figcaption>
                         </a>
                     </figure>

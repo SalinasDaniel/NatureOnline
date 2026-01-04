@@ -1,39 +1,43 @@
-const gulp = require('gulp');
+const { src, dest, watch, series, parallel } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cleanCSS = require('gulp-clean-css');
 
-gulp.task('sass', ()=>
-    gulp.src('./src/*.scss')
-        .pipe(sass({
-            outputStyle: 'compressed'
-        }).on('error', sass.logError))
-        .pipe(autoprefixer())
-        .pipe(gulp.dest('./dist/css'))
-);
+// Paths
+const paths = {
+  scss: './src/*.scss',
+  html: 'src/**/*.html',
+  php: 'src/**/*.php',
+  dist: './dist'
+};
 
-gulp.task('assets', function() {
-    return gulp.src('src/assets/**/*')
-        .pipe(gulp.dest('dist/assets'));
-});
+// Compilar SCSS (SOLO main.scss)
+function css() {
+  return src(paths.scss)
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(cleanCSS({ level: 2 }))
+    .pipe(dest(`${paths.dist}/css`));
+}
 
-gulp.task('vendor', function() {
-    return gulp.src('src/vendor/**/*')
-        .pipe(gulp.dest('dist/vendor'));
-});
+// Copiar HTML y PHP
+function copyHtmlPhp() {
+  return src([paths.html, paths.php], { base: 'src' })
+    .pipe(dest(paths.dist));
+}
 
-gulp.task('html', function() {
-    return gulp.src('src/**/*.html')
-        .pipe(gulp.dest('dist'));
-    });
+// Watch
+function watchFiles() {
+  watch('./src/**/*.scss', css);
+  watch([paths.html, paths.php], copyHtmlPhp);
+}
 
-  // Tarea para copiar archivos PHP de src a dist
-gulp.task('php', function() {
-    return gulp.src('src/**/*.php')
-        .pipe(gulp.dest('dist'));
-    });
+// Build
+const build = parallel(css, copyHtmlPhp, watchFiles);
 
-gulp.task('watch-sass', function() {
-    gulp.watch('./src/*/*.scss', gulp.series('sass'));
-});
-
-gulp.task('build', gulp.parallel('sass', 'assets', 'vendor', 'html', 'php'));
+// Exportar tareas
+exports.css = css;
+exports.build = build;
+exports.watch = watchFiles;
+exports.default = series(build, watchFiles);

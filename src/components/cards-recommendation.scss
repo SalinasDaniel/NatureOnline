@@ -1,10 +1,13 @@
+//abstracts
+@use "../abstracts/mixins.scss";
+
 body{
     .cards-recommendation{
         .row{
             margin-left: 0;
             margin-right: 0;
             justify-content: center;
-            @include breakpoint(phone){
+            @include mixins.breakpoint(phone){
                 gap:20px;
             }
             .card-body{

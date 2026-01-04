@@ -1,6 +1,9 @@
+//abstracts
+@use "../abstracts/mixins.scss";
+
 header{
     .navbar{
-        @include breakpoint(desktop){
+        @include mixins.breakpoint(desktop){
             padding: 0;
         }
         .container-fluid{
@@ -97,10 +100,10 @@ header{
         }
     }
     .navbar-desktop{
-        @include breakpoint(phone){
+        @include mixins.breakpoint(phone){
             display: none;
         }
-        @include breakpoint(tablet){
+        @include mixins.breakpoint(tablet){
             display: none;
         }
     }
@@ -178,10 +181,10 @@ header{
                 }
             }
         }
-        @include breakpoint(phone){
+        @include mixins.breakpoint(phone){
             display: block;
         }
-        @include breakpoint(tablet){
+        @include mixins.breakpoint(tablet){
             display: block;
         }
     }

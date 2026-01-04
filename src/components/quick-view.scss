@@ -1,18 +1,35 @@
+//abstracts
+@use "../abstracts/mixins.scss";
+
 #quickView{
     .modal-dialog{
         max-width: 750px;
         .modal-content{
             .modal-header{
                 border:none;
+                padding: 0;
+                button{
+                    position: absolute;
+                    right: 14px;
+                    top: 12px;
+                    z-index: 1;
+                }
             }
             .modal-body{
                 padding: 0;
+                >div{
+                    @include mixins.breakpoint(phone){
+                        padding: 0;
+                        padding-bottom: 20px;
+                    }
+                }
                 .row{
                     margin: 0;
                     .image{
                         background-color: #f0f0f0;
                     }
                     .product{
+                        padding-top: 24px;
                         .product-body{
                             span{
                                 font-size: 12px;

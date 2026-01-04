@@ -1,0 +1,22 @@
+.notfound-container{
+    .custom-btn:hover {
+        background-color: #f3e8ff;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .custom-bg {
+            color: white;
+        }
+
+        .custom-btn {
+            background-color: #374151;
+            color: white;
+        }
+
+        .custom-btn:hover {
+            background-color: #4b5563;
+        }
+    }
+}
+
